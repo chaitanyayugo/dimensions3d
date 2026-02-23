@@ -168,28 +168,50 @@
     </section>
 
     <!-- 5. 3D PRODUCT COLLECTION (Screenshot 4 & 5) -->
-    <section id="collection" class="py-32 px-8 bg-slate-50">
-        <div class="text-center mb-24">
-            <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight uppercase">3D Curated Collection</h2>
-            <p class="text-gray-400 text-xs uppercase tracking-[0.4em]">Interactive prototypes ready for immediate delivery</p>
-        </div>
+   <div class="group bg-white border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500">
+    <!-- The 3D Viewer with warm "Spotlight" background -->
+    <div class="relative bg-[#2e2a25] overflow-hidden"> 
+        <model-viewer 
+            src="path_to_your_ochre_chair_model.glb" 
+            poster="fallback_image_of_original.jpg"
+            auto-rotate 
+            rotation-per-second="20deg" 
+            camera-controls 
+            shadow-intensity="2" 
+            shadow-softness="1"
+            exposure="1.2"
+            environment-image="neutral"
+            class="w-full h-80 pointer-events-none group-hover:pointer-events-auto"
+            style="--poster-color: #2e2a25;">
+        </model-viewer>
+        
+        <!-- Subtle gradient overlay to mimic the lamp's falloff -->
+        <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_70%_30%,rgba(255,220,150,0.1)_0%,transparent_70%)]"></div>
+    </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
-            <!-- 3D Product Card -->
-            <div class="group bg-white border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500">
-                <div class="bg-gray-50">
-                    <model-viewer src="https://modelviewer.dev/shared-assets/models/Chair.glb" 
-                        auto-rotate rotation-per-second="30deg" camera-controls shadow-intensity="1" class="h-80"></model-viewer>
-                </div>
-                <div class="p-8">
-                    <p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-2">Living Room</p>
-                    <h4 class="text-xl font-bold uppercase mb-4">Oslo Lounge 3D</h4>
-                    <div class="flex justify-between items-center pt-6 border-t border-gray-50">
-                        <span class="text-lg font-bold tracking-tighter">$3,200</span>
-                        <button class="bg-black text-white px-6 py-2 text-[9px] font-bold uppercase tracking-widest hover:bg-gray-800 transition shine-hover">Inquire</button>
-                    </div>
-                </div>
+    <div class="p-8">
+        <div class="flex justify-between items-start mb-2">
+            <p class="text-[9px] font-bold text-amber-700 uppercase tracking-widest">Master Suite</p>
+            <span class="text-[10px] text-gray-400 font-medium">Limited Edition</span>
+        </div>
+        
+        <h4 class="text-xl font-bold uppercase mb-4 text-gray-900 tracking-tight">Ochre Reading Nook</h4>
+        
+        <p class="text-gray-500 text-xs leading-relaxed mb-6 line-clamp-2">
+            A curated ensemble featuring a bouclé armchair, solid oak stool, and a brushed brass floor lamp.
+        </p>
+
+        <div class="flex justify-between items-center pt-6 border-t border-gray-50">
+            <div class="flex flex-col">
+                <span class="text-[10px] text-gray-400 uppercase font-bold tracking-tighter">Full Set</span>
+                <span class="text-lg font-bold tracking-tighter">$4,850</span>
             </div>
+            <button class="bg-black text-white px-8 py-3 text-[9px] font-bold uppercase tracking-widest hover:bg-amber-900 transition-colors duration-300">
+                Inquire
+            </button>
+        </div>
+    </div>
+</div>
             
             <!-- (You can add more models here by copying the block above) -->
              <!-- 3D Product Card 2 -->
