@@ -98,29 +98,32 @@
 <div class="card-3d bg-white p-4 rounded-sm border border-gray-100 group">
     <div class="relative overflow-hidden bg-slate-50">
         <!-- THE 3D SOFA MODEL -->
-        <model-viewer 
-            src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Sofa/glTF-Binary/Sofa.glb" 
-            alt="Premium 3D Sofa" 
-            auto-rotate 
-            camera-controls 
-            shadow-intensity="2" 
-            exposure="1.2"
-            ar 
-            class="w-full h-80 md:h-[400px] cursor-grab active:cursor-grabbing">
-        </model-viewer>
-        
-        <!-- Sexy Interactive Badge -->
-        <div class="absolute top-4 right-4 bg-black text-white text-[8px] px-2 py-1 uppercase tracking-tighter font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            Interactive 3D
-        </div>
-    </div>
+        <!-- Card Container with a "Mood" background to match your image -->
+<div class="card-3d bg-[#f4f1ea] p-2 rounded-xl border border-gray-200 shadow-lg max-w-sm">
+    
+    <!-- Model Viewer: Adjusted for the specific lighting of your image -->
+    <model-viewer 
+        src="YOUR_CHAIR_MODEL.glb" 
+        poster="fallback-image.jpg"
+        auto-rotate 
+        camera-controls 
+        shadow-intensity="2" 
+        shadow-softness="1"
+        exposure="1.1"
+        ar 
+        style="width: 100%; height: 350px; background-color: #e5e0d5;"
+        alt="Designer Armchair and Lamp Set">
+    </model-viewer>
 
     <div class="p-6">
-        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Living Space</p>
-        <h3 class="text-xl font-bold uppercase mb-4 tracking-tighter">Metropolitan Sofa</h3>
-        <p class="text-gray-500 text-xs leading-relaxed">
-            Rotate the model above to explore the architectural silhouette and premium leather textures from every angle.
+        <p class="text-[10px] font-bold text-amber-700 uppercase tracking-widest mb-2">Mid-Century Modern</p>
+        <h3 class="text-xl font-serif font-bold text-gray-800 mb-3">The Ochre Reading Nook</h3>
+        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+            A minimalist blend of warmth and geometry, featuring a brushed brass lamp and bouclé armchair.
         </p>
+        <button class="w-full py-2 bg-gray-900 text-white text-xs uppercase font-bold tracking-tighter hover:bg-amber-800 transition-colors">
+            View Details
+        </button>
     </div>
 </div>
             <!-- 3D Card 2 -->
