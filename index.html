@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIMENSIONS | Premium 3D Bespoke Interiors</title>
+    
+    <!-- Scripts for 3D and Icons -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #fff; color: #0b0f17; overflow-x: hidden; }
+        .tracking-premium { letter-spacing: 0.4em; }
+        
+        /* Sexy Hover Effects */
+        .card-3d { 
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+        }
+        .card-3d:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+        }
+
+        /* Attractive Lighting Backgrounds */
+        .spotlight {
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,1) 0%, rgba(248,250,252,1) 100%);
+        }
+
+        /* 3D Model Styling */
+        model-viewer {
+            width: 100%;
+            height: 400px;
+            --poster-color: transparent;
+            outline: none;
+        }
+
+        /* Shine Effect on Hover */
+        .shine-hover {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine-hover::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            transition: 0.8s;
+            opacity: 0;
+        }
+        .shine-hover:hover::after {
+            opacity: 1;
+            left: 100%;
+            top: 100%;
+        }
+
+        .text-glow { text-shadow: 0 0 30px rgba(255,255,255,0.5); }
+    </style>
+</head>
+<body class="antialiased selection:bg-black selection:text-white">
+
+    <!-- 1. NAVIGATION (Glassmorphism) -->
+    <nav class="fixed w-full z-[100] bg-white/70 backdrop-blur-xl border-b border-gray-100 h-20 flex items-center justify-between px-8 md:px-16">
+        <div class="text-xl font-bold tracking-premium uppercase">Dimensions</div>
+        <div class="hidden lg:flex gap-10 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
+            <a href="#hero" class="hover:text-black transition-colors">Home</a>
+            <a href="#bespoke" class="hover:text-black transition-colors">Bespoke</a>
+            <a href="#collection" class="hover:text-black transition-colors">3D Collection</a>
+            <a href="#partners" class="hover:text-black transition-colors">Partners</a>
+        </div>
+        <button class="bg-black text-white px-8 py-2.5 text-[10px] font-bold uppercase tracking-widest hover:bg-gray-800 transition-all shine-hover">Inquire</button>
+    </nav>
+
+    <!-- 2. HERO SECTION (Screenshot 1) -->
+    <header id="hero" class="relative h-screen flex items-center justify-center text-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div class="relative z-10 text-white px-6">
+            <h1 class="text-6xl md:text-9xl font-bold tracking-premium uppercase mb-6 text-glow">Dimensions</h1>
+            <h2 class="text-lg md:text-2xl font-light tracking-[0.5em] uppercase opacity-80">Where Vision Takes Shape</h2>
+        </div>
+    </header>
+
+    <!-- 3. 3D PHILOSOPHY CARDS (Screenshot 2) -->
+    <section class="py-32 px-8 max-w-7xl mx-auto spotlight">
+        <div class="text-center mb-24">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight uppercase">Our Philosophy</h2>
+            <p class="text-gray-400 text-xs uppercase tracking-[0.4em]">Experience your space in three dimensions</p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-12">
+            <!-- 3D Card 1 -->
+            <div class="card-3d bg-white p-4 rounded-sm border border-gray-100">
+                <model-viewer src="https://modelviewer.dev/shared-assets/models/Chair.glb" 
+                    auto-rotate camera-controls shadow-intensity="1" ar ar-modes="webxr scene-viewer"
+                    alt="3D Bespoke Chair"></model-viewer>
+                <div class="p-6">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Bespoke Design</p>
+                    <h3 class="text-xl font-bold uppercase mb-4">Tailored Creations</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Rotate the model above. Every dimension is customizable to your exact vision.</p>
+                </div>
+            </div>
+            <!-- 3D Card 2 -->
+            <div class="card-3d bg-white p-4 rounded-sm border border-gray-100">
+                <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                    auto-rotate camera-controls shadow-intensity="1" ar
+                    alt="3D Sculptural Art"></model-viewer>
+                <div class="p-6">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Sculptural Form</p>
+                    <h3 class="text-xl font-bold uppercase mb-4">Artistic Precision</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Our pieces blend the boundaries between furniture and fine art.</p>
+                </div>
+            </div>
+            <!-- 3D Card 3 -->
+            <div class="card-3d bg-white p-4 rounded-sm border border-gray-100">
+                <model-viewer src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" 
+                    auto-rotate camera-controls shadow-intensity="1" ar
+                    alt="3D History"></model-viewer>
+                <div class="p-6">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Legacy</p>
+                    <h3 class="text-xl font-bold uppercase mb-4">Timeless Elegance</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed">Built with materials that endure for generations to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. RECENT PROJECTS (Screenshot 3) -->
+    <section class="py-32 px-8 bg-[#0b0f17] text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
+            <div>
+                <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.4em] mb-4">Recent Projects</p>
+                <h2 class="text-5xl md:text-7xl font-bold mb-8 tracking-tighter uppercase leading-none">Transforming <br>Reality</h2>
+                <p class="text-gray-400 text-sm leading-loose mb-10 max-w-md">Residential masterpieces and commercial landmarks, visualized in 3D before a single hammer is swung.</p>
+                <button class="border border-white px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">View Our Work</button>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800" class="rounded-sm hover:scale-105 transition duration-700">
+                <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&q=80&w=800" class="rounded-sm mt-12 hover:scale-105 transition duration-700">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 3D PRODUCT COLLECTION (Screenshot 4 & 5) -->
+    <section id="collection" class="py-32 px-8 bg-slate-50">
+        <div class="text-center mb-24">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight uppercase">3D Curated Collection</h2>
+            <p class="text-gray-400 text-xs uppercase tracking-[0.4em]">Interactive prototypes ready for immediate delivery</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+            <!-- 3D Product Card -->
+            <div class="group bg-white border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div class="bg-gray-50">
+                    <model-viewer src="https://modelviewer.dev/shared-assets/models/Chair.glb" 
+                        auto-rotate rotation-per-second="30deg" camera-controls shadow-intensity="1" class="h-80"></model-viewer>
+                </div>
+                <div class="p-8">
+                    <p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-2">Living Room</p>
+                    <h4 class="text-xl font-bold uppercase mb-4">Oslo Lounge 3D</h4>
+                    <div class="flex justify-between items-center pt-6 border-t border-gray-50">
+                        <span class="text-lg font-bold tracking-tighter">$3,200</span>
+                        <button class="bg-black text-white px-6 py-2 text-[9px] font-bold uppercase tracking-widest hover:bg-gray-800 transition shine-hover">Inquire</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- (You can add more models here by copying the block above) -->
+             <!-- 3D Product Card 2 -->
+             <div class="group bg-white border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div class="bg-gray-50">
+                    <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                        auto-rotate rotation-per-second="30deg" camera-controls shadow-intensity="1" class="h-80"></model-viewer>
+                </div>
+                <div class="p-8">
+                    <p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-2">Office</p>
+                    <h4 class="text-xl font-bold uppercase mb-4">Apex Executive 3D</h4>
+                    <div class="flex justify-between items-center pt-6 border-t border-gray-50">
+                        <span class="text-lg font-bold tracking-tighter">$2,900</span>
+                        <button class="bg-black text-white px-6 py-2 text-[9px] font-bold uppercase tracking-widest hover:bg-gray-800 transition shine-hover">Inquire</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Product Card 3 -->
+            <div class="group bg-white border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div class="bg-gray-50">
+                    <model-viewer src="https://modelviewer.dev/shared-assets/models/Chair.glb" 
+                        auto-rotate rotation-per-second="30deg" camera-controls shadow-intensity="1" class="h-80"></model-viewer>
+                </div>
+                <div class="p-8">
+                    <p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1">Dining</p>
+                    <h4 class="text-xl font-bold uppercase mb-4">Nordic Table 3D</h4>
+                    <div class="flex justify-between items-center pt-6 border-t border-gray-50">
+                        <span class="text-lg font-bold tracking-tighter">$4,500</span>
+                        <button class="bg-black text-white px-6 py-2 text-[9px] font-bold uppercase tracking-widest hover:bg-gray-800 transition shine-hover">Inquire</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PARTNERS (Screenshot 6) -->
+    <section id="partners" class="py-32 px-8 border-t border-gray-100 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <p class="text-[10px] uppercase tracking-[0.5em] text-gray-400 mb-8 font-bold">Our Global Partners</p>
+            <div class="flex flex-wrap justify-center gap-16 md:gap-32 opacity-30 grayscale hover:grayscale-0 transition-all duration-1000">
+                <span class="text-2xl font-bold uppercase tracking-widest">Artek</span>
+                <span class="text-2xl font-bold uppercase tracking-widest">Flos</span>
+                <span class="text-2xl font-bold uppercase tracking-widest">Vitra</span>
+                <span class="text-2xl font-bold uppercase tracking-widest">B&B Italia</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. MEGA FOOTER -->
+    <footer class="bg-[#0b0f17] text-white pt-32 pb-12 px-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-20">
+            <div class="col-span-2 md:col-span-1">
+                <div class="text-xl font-bold tracking-premium uppercase mb-8">Dimensions</div>
+                <p class="text-gray-500 text-[10px] leading-relaxed uppercase tracking-widest">Next-generation furniture commerce. Designed for the discerning.</p>
+            </div>
+            <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-widest mb-8 text-gray-400">Explore</h4>
+                <ul class="text-[10px] space-y-4 text-gray-600 font-bold uppercase tracking-widest">
+                    <li><a href="#" class="hover:text-white transition">Bespoke</a></li>
+                    <li><a href="#" class="hover:text-white transition">3D Models</a></li>
+                    <li><a href="#" class="hover:text-white transition">Showroom</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-widest mb-8 text-gray-400">Contact</h4>
+                <p class="text-[10px] text-gray-600 tracking-widest uppercase font-bold mb-4">hello@dimensions.design</p>
+                <p class="text-[10px] text-gray-600 tracking-widest uppercase font-bold">+1 (555) 123-4567</p>
+            </div>
+            <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-widest mb-8 text-gray-400">Legal</h4>
+                <p class="text-[10px] text-gray-600 tracking-widest uppercase font-bold mb-4">Privacy Policy</p>
+                <p class="text-[10px] text-gray-600 tracking-widest uppercase font-bold">Terms of Sale</p>
+            </div>
+        </div>
+        <div class="mt-24 pt-12 border-t border-gray-900 text-center">
+            <p class="text-[9px] text-gray-700 tracking-[0.5em] uppercase font-bold">&copy; 2024 Dimensions Design Studio.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
