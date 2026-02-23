@@ -94,17 +94,35 @@
             <p class="text-gray-400 text-xs uppercase tracking-[0.4em]">Experience your space in three dimensions</p>
         </div>
         <div class="grid lg:grid-cols-3 gap-12">
-            <!-- 3D Card 1 -->
-            <div class="card-3d bg-white p-4 rounded-sm border border-gray-100">
-                <model-viewer src="https://modelviewer.dev/shared-assets/models/Chair.glb" 
-                    auto-rotate camera-controls shadow-intensity="1" ar ar-modes="webxr scene-viewer"
-                    alt="3D Bespoke Chair"></model-viewer>
-                <div class="p-6">
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Bespoke Design</p>
-                    <h3 class="text-xl font-bold uppercase mb-4">Tailored Creations</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed">Rotate the model above. Every dimension is customizable to your exact vision.</p>
-                </div>
-            </div>
+            <!-- Corrected 3D Sofa Card (Responsive & High-End) -->
+<div class="card-3d bg-white p-4 rounded-sm border border-gray-100 group">
+    <div class="relative overflow-hidden bg-slate-50">
+        <!-- THE 3D SOFA MODEL -->
+        <model-viewer 
+            src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Sofa/glTF-Binary/Sofa.glb" 
+            alt="Premium 3D Sofa" 
+            auto-rotate 
+            camera-controls 
+            shadow-intensity="2" 
+            exposure="1.2"
+            ar 
+            class="w-full h-80 md:h-[400px] cursor-grab active:cursor-grabbing">
+        </model-viewer>
+        
+        <!-- Sexy Interactive Badge -->
+        <div class="absolute top-4 right-4 bg-black text-white text-[8px] px-2 py-1 uppercase tracking-tighter font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            Interactive 3D
+        </div>
+    </div>
+
+    <div class="p-6">
+        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Living Space</p>
+        <h3 class="text-xl font-bold uppercase mb-4 tracking-tighter">Metropolitan Sofa</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">
+            Rotate the model above to explore the architectural silhouette and premium leather textures from every angle.
+        </p>
+    </div>
+</div>
             <!-- 3D Card 2 -->
             <div class="card-3d bg-white p-4 rounded-sm border border-gray-100">
                 <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
